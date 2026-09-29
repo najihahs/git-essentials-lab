@@ -32,8 +32,13 @@ public final class Catalog {
         Objects.requireNonNull(query, "Search query is required");
         return books.values().stream()
                 .filter(book -> book.title()
+
                     .toLowerCase(Locale.ROOT)
                     .contains(query.toLowerCase(Locale.ROOT)))
+
+                        .toLowerCase(Locale.ROOT)
+                        .contains(query.toLowerCase(Locale.ROOT)))
+
                 .toList();
     }
 }
